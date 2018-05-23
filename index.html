@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="weatherApp.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Local Weather App</title>
+</head>
+<body>
+  
+  
+  <div class="container">
+    <div class ="grid">
+          <div class ="searchform">
+                <form id="location_form">
+                    <input type="text" id="location-input" placeholder="Enter Location (City, Country)">
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                </form>
+         </div>
+         <div class ="content">
+            <p class="loc"><i class="fa fa-map-marker"></i> <span id="location">Naga City, Camarines Sur, Philippines</span></p>
+            <p class="date_time"><span id="date_time">Saturday, April 14 4:24</span></p>  
+            <p class ="temp"><span id="currentTemp">32</span><span id="tempUnit">°C</span></p> 
+            <canvas id="weatherIcon" width="150" height="150"></canvas>
+            <p class ="hourly_summary"><span id ="summary">Humid and partly cloudy.</span></p>
+            <p class="feels_like">Feels Like: <span id="feelsLike">36°C</span></p> 
+            <p class="minMax">Min <span id="minTemp">31°C</span> <span>|</span> Max <span id="maxTemp">37°C</span></p>
+            <p class="humid"><i class="wi wi-humidity"></i> Humidity: <span id="humidity">61</span>%</p>
+            <p class="wind_speed"><i class="wi wi-strong-wind"></i> Wind Speed: <span id="windSpeed">7.2</span> kph</p>
+            <p class="ChanceRain"><i class="wi wi-umbrella"></i> Chance of Rain: <span id="precip">61</span>%</p>
+            <p class="day_summary"><span id="todaySummary">Expect humid and partly cloudy throughout the day.</span></p>
+            <div class="toggle">
+                <span>°C</span>
+                <div class ="toggle-btn">
+                  <div class="inner-circle"></div>
+                </div>
+                <span>°F</span>
+              </div>
+        </div>
+        
+         
+            <footer class="footer">
+                <p class="copyright text-muted small footer-text"><a href="https://darksky.net/poweredby" target="_blank">Powered by DarkSky.</a> Local Weather App by <a href="https://github.com/MayDeypalubos" target="_blank">May Deypalubos.</a></p>
+           </footer>
+
+    </div>
+  </div>
+
+               <script
+               src="https://code.jquery.com/jquery-3.3.1.js"></script>
+               <script src="https://rawgithub.com/darkskyapp/skycons/master/skycons.js"></script>
+               <script type="text/javascript" src="app.js"></script>
+               
+               
+</body>
+</html>

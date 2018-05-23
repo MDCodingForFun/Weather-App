@@ -1,0 +1,269 @@
+/*Fonts*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+*{
+  margin:0px;
+  padding:0px;
+  font-family: 'Open Sans', sans-serif;
+}
+html{
+  p:14px;
+}
+body{
+  background-color:#F1f1f2;
+}
+
+.container{
+  color:#F1F1F2;
+  display: grid;
+  margin-top:5%;
+  grid-template-columns:1fr;
+  grid-template-rows:1fr;
+  grid-template-areas:
+    "grid";
+  
+}
+.grid{
+  grid-area:grid;
+  display:grid; 
+  grid-template-columns:1fr 20% 20% 1fr;
+  grid-template-rows:auto 1fr auto;
+  grid-template-areas:
+    ". searchform searchform ."
+    ". content content ."
+    ". footer footer .";
+}
+.searchform{
+  grid-area:searchform;
+  justify-self: center;
+  padding-bottom:1rem;
+  margin:0;
+}
+#location-input{
+  background-color: #20948B;
+  border:none;
+  padding:.5rem;
+  font-size:1rem;
+  opacity:.6;
+  width:20rem;
+  border-radius:4px;
+  box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+}
+input::placeholder{
+  font-size:13px;
+  color:#F1F1F2;
+  font-weight: 500;
+}
+#location-input:focus{
+  outline: none;
+}
+.btn{
+  cursor:pointer;
+  position:relative;
+  margin-left:-3rem;
+  font-size:1rem;
+  border:none;
+  padding:.5rem;
+  width:3rem;
+  background-color:#F4CC70;
+  border-radius: 0px 4px 4px 0px;
+}
+.btn:focus{
+  outline: none;
+}
+.fa-search{
+  position:relative;
+}
+.content{
+  padding:1rem;
+  grid-area: content;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:auto auto auto auto auto auto auto auto auto auto;
+  grid-template-areas:
+    "location location"
+    "date_time date_time"
+    "temp weatherIcon"
+    "hourly_summary hourly_summary"
+    "feelsLike minMax"
+    "windSpeed windSpeed"
+    "humid humid"
+    "chance_of_rain chance_of_rain"
+    "day_summary day_summary"
+    ". toggle";
+  border-radius: 2%;
+  background: -moz-linear-gradient(top, #43c6ac 0%, #191654 100%);
+  background: -webkit-linear-gradient(top, #43c6ac 0%, #191654 100%);
+  background: linear-gradient(top, #43c6ac 0%, #191654 100%);
+  box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+}
+.loc{
+  grid-area:location;
+  padding-top:1rem;
+  font-size:1rem;
+}
+.date_time{
+  grid-area:date_time;
+  font-size:13px;
+  padding-left:1rem;
+}
+.temp{
+  grid-area:temp;
+  font-size: 3.5rem;
+  justify-self: end;
+  align-self:end;
+}
+#tempUnit{
+  font-size: 40px;
+}
+#weatherIcon{
+  grid-area:weatherIcon;
+  justify-self: left;
+  align-self:end;
+  padding-left:1rem;
+}
+.hourly_summary{
+  grid-area:hourly_summary;
+  font-size:1rem;
+  justify-self: center;
+  padding-bottom:1rem;
+}
+.feels_like{
+  grid-area:feelsLike;
+  justify-self: left;
+  font-size:13px;
+}
+.minMax{
+  grid-area:minMax;
+  justify-self: end;
+  font-size:13px;
+}
+.humid{
+  grid-area:humid;
+  justify-self: center;
+  font-size:13px;
+}
+.wind_speed{
+  grid-area:windSpeed;
+  justify-self: center;
+  font-size:13px;
+}
+.ChanceRain{
+  grid-area:chance_of_rain;
+  justify-self: center;
+  font-size:13px;
+}
+.day_summary{
+  grid-area:day_summary;
+  padding-top:1rem;
+  padding-bottom:1rem;
+  justify-self: center;
+}
+.toggle{
+  grid-area:toggle;
+  justify-self: end;
+  display:inline-flex;
+}
+.toggle span{
+  font-size:12px;
+  padding-right:.5em;
+  padding-left:.5em;
+}
+
+.toggle-btn{
+  width:40px;
+  height:10px;
+  background:gray;
+  border-radius:30px;
+  padding:5px;
+  transition: all 300ms ease-in-out;
+  cursor:pointer;
+}
+.toggle-btn .inner-circle{
+  width:10px;
+  height:10px;
+  background:white;
+  border-radius:50px;
+  transition: all 300ms ease-in-out;
+}
+.toggle-btn.active{
+  background:#00acee;
+}
+.toggle-btn.active > .inner-circle{
+  margin-left:30px;
+}
+.footer{
+  grid-area: footer;
+  font-size:12px;
+  color:#07575B;
+  padding-top:1rem;
+}
+.footer a:visited,
+.footer a:hover,
+.footer a:active {
+  color:#07575B;
+}
+@media(max-width:768px){
+  .grid{
+  grid-area:grid;
+  display:grid; 
+  grid-template-columns:1fr 40% 40% 1fr;
+  grid-template-rows:auto auto auto;
+  grid-template-areas:
+    ". searchform searchform ."
+    ". content content ."
+    ". footer footer .";
+}
+}
+@media(max-width:440px){
+  .grid{
+  grid-area:grid;
+  display:grid; 
+  grid-template-columns:1fr 45% 45% 1fr;
+  grid-template-rows:auto auto auto;
+  grid-template-areas:
+    ". searchform searchform ."
+    ". content content ."
+    ". footer footer .";
+}
+.content{
+  padding:1rem;
+  grid-area: content;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:auto auto auto auto auto auto auto auto auto auto;
+  grid-template-areas:
+    "location location"
+    "date_time date_time"
+    "temp weatherIcon"
+    "hourly_summary hourly_summary"
+    "feelsLike humid"
+    "windSpeed windSpeed"
+    "minMax minMax"
+    "chance_of_rain chance_of_rain"
+    "day_summary day_summary"
+    ". toggle";
+  }
+ #weatherIcon{
+  grid-area:weatherIcon;
+  justify-self: center;
+  align-self:end;
+  padding-left:1rem;
+  width:85px;
+  height:85px;
+}
+.humid{
+  grid-area:humid;
+  justify-self: right;
+  font-size:13px;
+}
+.minMax{
+  grid-area:minMax;
+  justify-self:center;
+}
+}
+@media(max-width:375px){
+  #location-input{
+  width:16rem;
+}
+}
+
